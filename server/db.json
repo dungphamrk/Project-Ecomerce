@@ -56,9 +56,146 @@
       "id": 11
     }
   ],
-  "users":[
+ "users": [
     {
-      
+      "id": 1,
+      "username": "john_doe",
+      "email": "john.doe@example.com",
+      "fullname": "John Doe",
+      "status": true,
+      "password": "hashed_password",
+      "role": true,
+      "avatar": "https://example.com/avatar1.jpg",
+      "phone": "123456789",
+      "address": "123 Example St, City, Country",
+      "created_at": "01/01/2023",
+      "updated_at": "05/07/2024"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "email": "jane.smith@example.com",
+      "fullname": "Jane Smith",
+      "status": false,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar2.jpg",
+      "phone": "987654321",
+      "address": "456 Sample Ave, Town, Country",
+      "created_at": "02/02/2023",
+      "updated_at": "06/07/2024"
+    },
+    {
+      "id": 3,
+      "username": "alice_green",
+      "email": "alice.green@example.com",
+      "fullname": "Alice Green",
+      "status": true,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar3.jpg",
+      "phone": "555444333",
+      "address": "789 Test Rd, Village, Country",
+      "created_at": "03/03/2023",
+      "updated_at": "07/07/2024"
+    },
+    {
+      "id": 4,
+      "username": "bob_jones",
+      "email": "bob.jones@example.com",
+      "fullname": "Bob Jones",
+      "status": true,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar4.jpg",
+      "phone": "111222333",
+      "address": "101 Main St, Town, Country",
+      "created_at": "04/04/2023",
+      "updated_at": "08/07/2024"
+    },
+    {
+      "id": 5,
+      "username": "emma_white",
+      "email": "emma.white@example.com",
+      "fullname": "Emma White",
+      "status": false,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar5.jpg",
+      "phone": "999888777",
+      "address": "246 Pine Ave, City, Country",
+      "created_at": "05/05/2023",
+      "updated_at": "09/07/2024"
+    },
+    {
+      "id": 6,
+      "username": "michael_brown",
+      "email": "michael.brown@example.com",
+      "fullname": "Michael Brown",
+      "status": true,
+      "password": "hashed_password",
+      "role": true,
+      "avatar": "https://example.com/avatar6.jpg",
+      "phone": "777666555",
+      "address": "369 Oak Rd, Village, Country",
+      "created_at": "06/06/2023",
+      "updated_at": "10/07/2024"
+    },
+    {
+      "id": 7,
+      "username": "sarah_davis",
+      "email": "sarah.davis@example.com",
+      "fullname": "Sarah Davis",
+      "status": false,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar7.jpg",
+      "phone": "333222111",
+      "address": "531 Cedar Ave, City, Country",
+      "created_at": "07/07/2023",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 8,
+      "username": "kevin_wilson",
+      "email": "kevin.wilson@example.com",
+      "fullname": "Kevin Wilson",
+      "status": true,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar8.jpg",
+      "phone": "666777888",
+      "address": "753 Maple Rd, Town, Country",
+      "created_at": "08/08/2023",
+      "updated_at": "12/07/2024"
+    },
+    {
+      "id": 9,
+      "username": "lisa_miller",
+      "email": "lisa.miller@example.com",
+      "fullname": "Lisa Miller",
+      "status": true,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar9.jpg",
+      "phone": "444555666",
+      "address": "852 Elm St, Village, Country",
+      "created_at": "09/09/2023",
+      "updated_at": "13/07/2024"
+    },
+    {
+      "id": 10,
+      "username": "david_wilson",
+      "email": "david.wilson@example.com",
+      "fullname": "David Wilson",
+      "status": false,
+      "password": "hashed_password",
+      "role": false,
+      "avatar": "https://example.com/avatar10.jpg",
+      "phone": "222333444",
+      "address": "963 Birch Ave, City, Country",
+      "created_at": "10/10/2023",
+      "updated_at": "14/07/2024"
     }
   ]
 }

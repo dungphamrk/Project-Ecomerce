@@ -1,66 +1,65 @@
-'use client'
-import { useState, ChangeEvent, FormEvent } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Field, Label, Switch } from '@headlessui/react'
-import { useDispatch } from 'react-redux'
-import { register } from '../../services/user.service'
+"use client";
+import { useState, ChangeEvent, FormEvent } from "react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Switch } from "@headlessui/react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../store/reducers/userSlice"; // Import the correct register thunk
+
 
 interface FormData {
-  account: string
-  password: string
-  email: string
-  phoneNumber: string
-  country: string
-  address: string
+  username: string;
+  password: string;
+  email: string;
+  phone: string;
+  address: string;
 }
 
 export default function Register() {
-  const [agreed, setAgreed] = useState(false)
+  const [agreed, setAgreed] = useState(false);
   const [formData, setFormData] = useState<FormData>({
-    account: '',
-    password: '',
-    email: '',
-    phoneNumber: '',
-    country: 'US',
-    address: ''
-  })
-  const dispatch=useDispatch();
+    username: "",
+    password: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+  const dispatch = useDispatch();
 
-  const [errors, setErrors] = useState<Partial<FormData>>({})
+  const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const validate = (): boolean => {
-    const newErrors: Partial<FormData> = {}
-    if (!formData.account) newErrors.account = 'Tài khoản là bắt buộc'
-    if (!formData.password) newErrors.password = 'Mật khẩu là bắt buộc'
+    const newErrors: Partial<FormData> = {};
+    if (!formData.username) newErrors.username = "Tên đăng nhập là bắt buộc";
+    if (!formData.password) newErrors.password = "Mật khẩu là bắt buộc";
     if (!formData.email) {
-      newErrors.email = 'Email là bắt buộc'
+      newErrors.email = "Email là bắt buộc";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email không hợp lệ'
+      newErrors.email = "Email không hợp lệ";
     }
-    if (!formData.phoneNumber) newErrors.phoneNumber = 'Số điện thoại là bắt buộc'
-    if (!formData.address) newErrors.address = 'Địa chỉ là bắt buộc'
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    if (!formData.phone) newErrors.phone = "Số điện thoại là bắt buộc";
+    if (!formData.address) newErrors.address = "Địa chỉ là bắt buộc";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validate()) {
-      // Thực hiện đăng ký người dùng mới với formData
-      console.log('Đăng ký thành công', formData)
-      dispatch(register(formData))
+      dispatch(registerUser(formData));
     } else {
-      console.log('Đăng ký thất bại', errors)
+      console.log("Đăng ký thất bại", errors);
     }
-  }
+  };
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -71,38 +70,49 @@ export default function Register() {
         <div
           style={{
             clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
           className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Đăng kí</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Đăng kí
+        </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Thông tin chính xác sẽ là phương tiện để sử dụng dịch vụ của chúng tôi tốt nhất
+          Thông tin chính xác sẽ là phương tiện để sử dụng dịch vụ của chúng tôi
+          tốt nhất
         </p>
       </div>
       <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2">
-            <label htmlFor="account" className="block text-sm font-semibold leading-6 text-gray-900">
-              Tài khoản
+            <label
+              htmlFor="username"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
+              Tên đăng nhập
             </label>
             <div className="mt-2.5">
               <input
-                id="account"
-                name="account"
+                id="username"
+                name="username"
                 type="text"
-                autoComplete="organization"
-                value={formData.account}
+                autoComplete="username"
+                value={formData.username}
                 onChange={handleChange}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
-              {errors.account && <p className="text-red-500 text-sm mt-1">{errors.account}</p>}
+              {errors.username && (
+                <p className="text-red-500 text-sm mt-1">{errors.username}</p>
+              )}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="password" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="password"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Mật khẩu
             </label>
             <div className="mt-2.5">
@@ -110,16 +120,21 @@ export default function Register() {
                 id="password"
                 name="password"
                 type="password"
-                autoComplete="organization"
+                autoComplete="current-password"
                 value={formData.password}
                 onChange={handleChange}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
-              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+              )}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="email"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Email
             </label>
             <div className="mt-2.5">
@@ -132,48 +147,38 @@ export default function Register() {
                 onChange={handleChange}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Số điện thoại
             </label>
             <div className="relative mt-2.5">
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <label htmlFor="country" className="sr-only">
-                  Country
-                </label>
-                <select
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm custom-select appearance-none"
-                >
-                  <option value="US">US</option>
-                  <option value="CA">CA</option>
-                  <option value="EU">EU</option>
-                </select>
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
-                />
-              </div>
               <input
-                id="phone-number"
-                name="phoneNumber"
+                id="phone"
+                name="phone"
                 type="tel"
                 autoComplete="tel"
-                value={formData.phoneNumber}
+                value={formData.phone}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
-              {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>}
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="address" className="block text-sm font-semibold leading-6 text-gray-900">
+            <label
+              htmlFor="address"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
               Địa chỉ
             </label>
             <div className="mt-2.5">
@@ -185,31 +190,36 @@ export default function Register() {
                 onChange={handleChange}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
-              {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
+              {errors.address && (
+                <p className="text-red-500 text-sm mt-1">{errors.address}</p>
+              )}
             </div>
           </div>
-          <Field className="flex gap-x-4 sm:col-span-2">
+          <div className="flex gap-x-4 sm:col-span-2">
             <div className="flex h-6 items-center">
               <Switch
                 checked={agreed}
                 onChange={setAgreed}
-                className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-[checked]:bg-indigo-600"
+                className={`${
+                  agreed ? "bg-indigo-600" : "bg-gray-200"
+                } relative inline-flex h-6 w-11 items-center rounded-full`}
               >
                 <span className="sr-only">Agree to policies</span>
                 <span
-                  aria-hidden="true"
-                  className="h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out group-data-[checked]:translate-x-3.5"
+                  className={`${
+                    agreed ? "translate-x-6" : "translate-x-1"
+                  } inline-block h-4 w-4 transform rounded-full bg-white transition`}
                 />
               </Switch>
             </div>
-            <Label className="text-sm leading-6 text-gray-600">
-              By selecting this, you agree to our{' '}
+            <label className="text-sm leading-6 text-gray-600">
+              By selecting this, you agree to our{" "}
               <a href="#" className="font-semibold text-indigo-600">
                 privacy&nbsp;policy
               </a>
               .
-            </Label>
-          </Field>
+            </label>
+          </div>
         </div>
         <div className="mt-10">
           <button
@@ -221,5 +231,5 @@ export default function Register() {
         </div>
       </form>
     </div>
-  )
+  );
 }

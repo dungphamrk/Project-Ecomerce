@@ -1,36 +1,23 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+// src/services/userService.ts
+import axios from 'axios';
+import { User } from '../interfaces/types'; // Ensure you have a User interface defined
 
-export const getAllAccount: any = createAsyncThunk(
-  "user/getAllAccount",
-  async () => {
-    const res = await axios.get("http://localhost:3000/users");
-    return res.data;
-  }
-);
+const API_URL = 'http://localhost:3000/users'; // Update your API URL if needed
 
-export const register: any = createAsyncThunk(
-  "user/registerUser",
-  async (newUser: any) => {
-    console.log(newUser);
-    
-    const response = await axios.post("http://localhost:3000/users",newUser  );
+export const UserService = {
+
+
+  async registerUser(newUser: User): Promise<User> {
+    const response = await axios.post<User>(API_URL, newUser);
     return response.data;
-  }
-);
+  },
 
-export const login: any = createAsyncThunk(
-  "user/login",
-  async (id: number) => {
-    const response = await axios.patch(`http://localhost:3000/users/${id}`);
+  async updateUser(id: number): Promise<User> {
+    const response = await axios.patch<User>(`${API_URL}/${id}`);
     return response.data;
-  }
-);
+  },
 
-export const logout: any = createAsyncThunk(
-  "user/logoutUser",
-  async (id: number) => {
-    const response = await axios.patch(`http://localhost:3000/users/${id}`);
-    return response.data;
-  }
-);
+  async deleteUser(id: number): Promise<void> {
+    await axios.patch(`${API_URL}/${id}`);
+  },
+};

@@ -1,71 +1,139 @@
+// src/slices/userSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { getAllAccount, register, login, logout } from '../../services/user.service';
+import { User } from '../../interfaces/types'; // Import the User interface
+import { UserService } from '../../services/user.service'; // Import the UserService
+import axios from 'axios';
 
+// Define the initial state using the User interface
 export interface UserState {
-  users: any[];
-  currentUser: any | null;
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  users: User[];
+  currentPage: number;
+  totalPages: number;
+  loading: boolean;
   error: string | null;
+  modalOpen: boolean;
 }
 
 const initialState: UserState = {
   users: [],
-  currentUser: null,
-  status: 'idle',
+  currentPage: 1,
+  totalPages: 1,
+  loading: false,
   error: null,
+  modalOpen: false,
 };
 
+// Async thunks for fetching, registering, updating, and deleting users
+export const fetchPaginatedUsers: any = createAsyncThunk(
+  "users/fetchPaginatedUsers",
+  async ({ page, limit }: { page: number; limit: number }) => {
+    const response = await axios.get(
+      `http://localhost:3000/users?_page=${page}&_limit=${limit}`
+    );
+    console.log(response.data);
+    console.log(Math.ceil(
+      parseInt(response.headers["x-total-count"]) / limit
+    ));
+    
+    return {
+      users: response.data,
+      totalPages: Math.ceil(
+        parseInt(response.headers["x-total-count"]) / limit
+      ),
+    };
+  }
+);
+
+export const registerUser:any = createAsyncThunk('users/registerUser', async (newUser: User) => {
+  const response = await axios.post('http://localhost:3000/users', newUser);
+  return response.data;
+});
+
+export const updateUser:any = createAsyncThunk('users/updateUser', async (updatedUser: User) => {
+  const response = await axios.put(`http://localhost:3000/users/${updatedUser.id}`, updatedUser);
+  return response.data;
+});
+
+export const deleteUser:any = createAsyncThunk('users/deleteUser', async (id: number) => {
+  await axios.delete(`http://localhost:3000/users/${id}`);
+  return id;
+});
+
+// Slice definition
 const userSlice = createSlice({
-  name: 'user',
+  name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    openModal(state) {
+      state.modalOpen = true;
+    },
+    closeModal(state) {
+      state.modalOpen = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllAccount.pending, (state) => {
-        state.status = 'loading';
+      // Fetch all users
+      .addCase(fetchPaginatedUsers.pending, (state) => {
+        state.loading = true;
+        state.error = null;
       })
-      .addCase(getAllAccount.fulfilled, (state, action: PayloadAction<any[]>) => {
-        state.status = 'succeeded';
-        state.users = action.payload;
+      .addCase(fetchPaginatedUsers.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users = action.payload.users;
+        state.totalPages = action.payload.totalPages;
       })
-      .addCase(getAllAccount.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message || 'Failed to fetch accounts';
+      .addCase(fetchPaginatedUsers.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to fetch products";
       })
-      .addCase(register.pending, (state) => {
-        state.status = 'loading';
+      // Register user
+      .addCase(registerUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
       })
-      .addCase(register.fulfilled, (state, action: PayloadAction<any>) => {
-        state.status = 'succeeded';
+      .addCase(registerUser.fulfilled, (state, action) => {
+        state.loading = false;
         state.users.push(action.payload);
       })
-      .addCase(register.rejected, (state, action) => {
-        state.status = 'failed';
+      .addCase(registerUser.rejected, (state, action) => {
+        state.loading = false;
         state.error = action.error.message || 'Failed to register user';
       })
-      .addCase(login.pending, (state) => {
-        state.status = 'loading';
+      // Update user
+      .addCase(updateUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
       })
-      .addCase(login.fulfilled, (state, action: PayloadAction<any>) => {
-        state.status = 'succeeded';
-        state.currentUser = action.payload;
+      .addCase(updateUser.fulfilled, (state, action) => {
+        const index = state.users.findIndex((user) => user.id === action.payload.id);
+        if (index !== -1) {
+          state.users[index] = action.payload;
+        }
+        state.loading = false;
       })
-      .addCase(login.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message || 'Failed to login user';
+      .addCase(updateUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || 'Failed to update user';
       })
-      .addCase(logout.pending, (state) => {
-        state.status = 'loading';
+      // Delete user
+      .addCase(deleteUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
       })
-      .addCase(logout.fulfilled, (state) => {
-        state.status = 'succeeded';
-        state.currentUser = null;
+      .addCase(deleteUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users = state.users.filter((user) => user.id !== action.payload);
       })
-      .addCase(logout.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message || 'Failed to logout user';
+      .addCase(deleteUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || 'Failed to delete user';
       });
   },
 });
 
+// Export the actions
+export const { openModal, closeModal } = userSlice.actions;
+
+// Export the reducer
 export default userSlice.reducer;
