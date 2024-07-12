@@ -30,11 +30,6 @@ export const fetchPaginatedUsers: any = createAsyncThunk(
     const response = await axios.get(
       `http://localhost:3000/users?_page=${page}&_limit=${limit}`
     );
-    console.log(response.data);
-    console.log(Math.ceil(
-      parseInt(response.headers["x-total-count"]) / limit
-    ));
-    
     return {
       users: response.data,
       totalPages: Math.ceil(
@@ -43,6 +38,12 @@ export const fetchPaginatedUsers: any = createAsyncThunk(
     };
   }
 );
+export const getAllUser: any = createAsyncThunk(
+  "users/getAll",
+  async () => {
+    const data = await UserService.getAllUsers();
+    return data;
+  });
 
 export const registerUser:any = createAsyncThunk('users/registerUser', async (newUser: User) => {
   const response = await axios.post('http://localhost:3000/users', newUser);
@@ -72,8 +73,12 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    
     builder
       // Fetch all users
+      .addCase(getAllUser.fulfilled, (state,action) => {
+        state.users=action.payload;
+      })
       .addCase(fetchPaginatedUsers.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -85,7 +90,7 @@ const userSlice = createSlice({
       })
       .addCase(fetchPaginatedUsers.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || "Failed to fetch products";
+        state.error = action.error.message || "Failed to fetch users";
       })
       // Register user
       .addCase(registerUser.pending, (state) => {

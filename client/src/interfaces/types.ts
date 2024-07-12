@@ -2,6 +2,12 @@
     id: number;
     name: string;
     price: number;
+    description:string;
+    quantity:number;
+    image:string;
+    category:string;
+    created_at: string;      // Thời gian được tạo (format dd/mm/yyyy)
+    updated_at: string;      // Thời gian cập nhật gần nhất (format dd/mm/yyyy)
   }
 export  interface User {
     id: number;               // ID người dùng
@@ -16,4 +22,9 @@ export  interface User {
     address: string;         // Địa chỉ
     created_at: string;      // Thời gian được tạo (format dd/mm/yyyy)
     updated_at: string;      // Thời gian cập nhật gần nhất (format dd/mm/yyyy)
+  }
+export interface Category{
+  id: number;
+  name:string;
+  status:boolean
   }

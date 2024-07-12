@@ -3,18 +3,21 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Switch } from "@headlessui/react";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../store/reducers/userSlice"; // Import the correct register thunk
-
-
+import { registerUser } from "../../store/reducers/userSlice";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
+import { User } from "../../interfaces/types";
 interface FormData {
   username: string;
   password: string;
   email: string;
   phone: string;
   address: string;
+  fullname: string;
 }
 
 export default function Register() {
+  const navigate=useNavigate();
   const [agreed, setAgreed] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     username: "",
@@ -22,9 +25,9 @@ export default function Register() {
     email: "",
     phone: "",
     address: "",
+    fullname: "",
   });
   const dispatch = useDispatch();
-
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const validate = (): boolean => {
@@ -38,6 +41,7 @@ export default function Register() {
     }
     if (!formData.phone) newErrors.phone = "Số điện thoại là bắt buộc";
     if (!formData.address) newErrors.address = "Địa chỉ là bắt buộc";
+    if (!formData.fullname) newErrors.fullname = "Họ và tên là bắt buộc";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -55,9 +59,20 @@ export default function Register() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      dispatch(registerUser(formData));
+      const user: Partial<User> = {
+        ...formData,
+        id: Math.floor(Math.random() * 10000), // Random id for demo purposes
+        status: true, // Default active status
+        role: false, // Default role as user
+        avatar: "", // Default avatar URL
+        created_at: new Date().toLocaleDateString("vi-VN"),
+        updated_at: new Date().toLocaleDateString("vi-VN"),
+      };
+      dispatch(registerUser(user as User));
+      swal("Welcome", "Đăng kí thành công", "success");
+      navigate("/login")
     } else {
-      console.log("Đăng ký thất bại", errors);
+      swal("Lỗi", "Vui lòng đăng nhập lại", "defeat");
     }
   };
 
@@ -86,6 +101,28 @@ export default function Register() {
       </div>
       <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="fullname"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
+              Họ và tên
+            </label>
+            <div className="mt-2.5">
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                autoComplete="fullname"
+                value={formData.fullname}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+              {errors.fullname && (
+                <p className="text-red-500 text-sm mt-1">{errors.fullname}</p>
+              )}
+            </div>
+          </div>
           <div className="sm:col-span-2">
             <label
               htmlFor="username"
@@ -159,7 +196,7 @@ export default function Register() {
             >
               Số điện thoại
             </label>
-            <div className="relative mt-2.5">
+            <div className="mt-2.5">
               <input
                 id="phone"
                 name="phone"

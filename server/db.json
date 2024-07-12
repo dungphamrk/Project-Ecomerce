@@ -2,61 +2,688 @@
   "products": [
     {
       "id": 1,
-      "name": "123",
-      "price": 10000000000
+      "name": "Áo ba lỗ đen",
+      "price": 200000,
+      "description": "Áo ba lỗ màu đen, thích hợp cho mùa hè.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F1.jpg?alt=media&token=8f4d19ca-7fbf-46a2-b4f3-f5605d76a7ac",
+      "category": "male",
+      "created_at": "01/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
       "id": 2,
-      "name": "123",
-      "price": 10000000000
+      "name": "Áo thun trắng hình đầu lâu",
+      "price": 250000,
+      "description": "Áo thun trắng với hình in đầu lâu.",
+      "quantity": 15,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F2.webp?alt=media&token=b7613a57-cef7-4270-a48d-bf73fb80a9f3",
+      "category": "male",
+      "created_at": "02/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
       "id": 3,
-      "name": "123",
-      "price": 10000000000
+      "name": "Áo sơ mi chấm bi",
+      "price": 300000,
+      "description": "Áo sơ mi xanh với họa tiết chấm bi.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F3.jpg?alt=media&token=a62c99ed-4a24-4bdf-80d1-1bcbec02f523",
+      "category": "male",
+      "created_at": "03/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
       "id": 4,
-      "name": "1231111",
-      "price": "100000000001"
+      "name": "Áo sơ mi trắng trơn",
+      "price": 280000,
+      "description": "Áo sơ mi trắng trơn, thiết kế đơn giản.",
+      "quantity": 12,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F4.webp?alt=media&token=a1ea7462-f3be-461b-9d7b-524411744e0e",
+      "category": "male",
+      "created_at": "04/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
       "id": 5,
-      "name": "123",
-      "price": 10000000000
+      "name": "Áo thun trắng in hình",
+      "price": 220000,
+      "description": "Áo thun trắng với hình in phía trước.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F5.jpg?alt=media&token=aa41c35d-70e4-4fa1-bf08-3337e6e524aa",
+      "category":"male",
+      "created_at": "05/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "123123123",
-      "price": "123",
-      "id": 6
+      "id": 6,
+      "name": "Áo thun đen có cổ",
+      "price": 240000,
+      "description": "Áo thun đen có cổ, phong cách trẻ trung.",
+      "quantity": 9,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F6.webp?alt=media&token=562197af-8ed5-4fb4-bf45-7fd2a85fe1cb",
+      "category": "male",
+      "created_at": "06/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "123",
-      "price": "123123",
-      "id": 7
+      "id": 7,
+      "name": "Áo thun đen đơn giản",
+      "price": 210000,
+      "description": "Áo thun đen thiết kế đơn giản.",
+      "quantity": 7,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F7.jpg?alt=media&token=fc66a127-c392-4384-928d-6bd5d2c1637c",
+      "category":"male",
+      "created_at": "07/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "12312312312111111111",
-      "price": "1111111111111111",
-      "id": 8
+      "id": 8,
+      "name": "Áo sơ mi trắng",
+      "price": 270000,
+      "description": "Áo sơ mi trắng, thích hợp cho công sở.",
+      "quantity": 11,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F8.webp?alt=media&token=e1d0aeda-f9df-4c75-86d2-ac11266fe5f8",
+      "category": "male",
+      "created_at": "08/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "ádasd",
-      "price": "12345678123",
-      "id": 9
+      "id": 9,
+      "name": "Áo thun xanh in chữ",
+      "price": 230000,
+      "description": "Áo thun xanh với chữ in phía trước.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F9.jpg?alt=media&token=1ed6ab75-f403-4dcd-8048-5a14abcf9ce8",
+      "category": "male",
+      "created_at": "09/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "1231111",
-      "price": "100000000001",
-      "id": 10
+      "id": 10,
+      "name": "Áo sơ mi caro",
+      "price": 260000,
+      "description": "Áo sơ mi caro trẻ trung.",
+      "quantity": 6,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F10.webp?alt=media&token=8d52df41-e947-4c93-85b7-71b32d5d2633",
+      "category": "male",
+      "created_at": "10/07/2024",
+      "updated_at": "11/07/2024"
     },
     {
-      "name": "dung pham",
-      "price": "123123",
-      "id": 11
+      "id": 11,
+      "name": "Áo sơ mi sọc dọc",
+      "price": 280000,
+      "description": "Áo sơ mi xanh sọc dọc.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F11.webp?alt=media&token=4d1bd410-6460-4ba3-8448-7bd706c0dffd",
+      "category": "male",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 12,
+      "name": "Áo thun be",
+      "price": 190000,
+      "description": "Áo thun màu be, đơn giản và tiện lợi.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F12.jpg?alt=media&token=1993e452-e610-4844-9bb6-6640da0c8046",
+      "category": "male",
+      "created_at": "12/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 13,
+      "name": "Áo sơ mi đen",
+      "price": 300000,
+      "description": "Áo sơ mi đen, thích hợp cho công sở.",
+      "quantity": 7,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F13.webp?alt=media&token=2a8f33a2-8bb7-4775-9de2-f6f69faaa0a4",
+      "category": "male",
+      "created_at": "13/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 14,
+      "name": "Áo sơ mi xanh nhạt",
+      "price": 250000,
+      "description": "Áo sơ mi xanh nhạt, thanh lịch.",
+      "quantity": 5,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F14.webp?alt=media&token=69baa57e-ac30-4788-9ce0-c07b68f10ddd",
+      "category": "male",
+      "created_at": "14/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 15,
+      "name": "Áo thun xanh",
+      "price": 220000,
+      "description": "Áo thun xanh, trẻ trung và năng động.",
+      "quantity": 9,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F15.webp?alt=media&token=05968ef1-4c35-41d2-9961-361c217a8999",
+      "category": "male",
+      "created_at": "15/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 16,
+      "name": "Áo sơ mi xanh dương",
+      "price": 270000,
+      "description": "Áo sơ mi xanh dương, đơn giản và lịch sự.",
+      "quantity": 12,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F16.webp?alt=media&token=9eeb53e5-8120-45cc-a797-700bc426a9bd",
+      "category": "male",
+      "created_at": "16/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 17,
+      "name": "Áo sơ mi hoa",
+      "price": 280000,
+      "description": "Áo sơ mi hoa, phong cách đi biển.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F17.webp?alt=media&token=6462bbeb-9d71-4cdd-8ba7-47ba7a962066",
+      "category": "male",
+      "created_at": "17/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 18,
+      "name": "Áo thun xanh đậm",
+      "price": 230000,
+      "description": "Áo thun xanh đậm, thiết kế đơn giản.",
+      "quantity": 9,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F18.webp?alt=media&token=15f2408a-4898-4b09-b3c0-543e150e6491",
+      "category": "male",
+      "created_at": "18/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 19,
+      "name": "Áo thun xanh nhạt",
+      "price": 200000,
+      "description": "Áo thun xanh nhạt, phong cách thanh lịch.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F19.webp?alt=media&token=a74d8f9a-e627-438d-ab89-63e8bbcc305c",
+      "category": "male",
+      "created_at": "19/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 20,
+      "name": "Áo sơ mi trắng sọc",
+      "price": 290000,
+      "description": "Áo sơ mi trắng với sọc, thích hợp cho công sở.",
+      "quantity": 7,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F20.webp?alt=media&token=7af31a77-ee6d-4bb2-89db-1a54a9bbfb4d",
+      "category": "male",
+      "created_at": "20/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 21,
+      "name": "Áo thun trắng tay dài",
+      "price": 220000,
+      "description": "Áo thun trắng tay dài, thích hợp cho thời tiết mát mẻ.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F21.webp?alt=media&token=2d9d4467-19d9-4509-9972-7ae7ceeea164",
+      "category": "male",
+      "created_at": "21/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 22,
+      "name": "Áo sơ mi chấm bi",
+      "price": 300000,
+      "description": "Áo sơ mi chấm bi, phong cách thanh lịch.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F22.webp?alt=media&token=20621c4e-4baa-4107-aa12-09ebf8729c70",
+      "category": "male",
+      "created_at": "22/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 23,
+      "name": "Áo thun xanh đen",
+      "price": 210000,
+      "description": "Áo thun xanh đen, thiết kế đơn giản.",
+      "quantity": 6,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F23.webp?alt=media&token=602a451a-153c-4638-bf4c-ed8028e55dcc",
+      "category": "male",
+      "created_at": "23/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 24,
+      "name": "Áo thun kẻ sọc",
+      "price": 250000,
+      "description": "Áo thun kẻ sọc, phong cách trẻ trung.",
+      "quantity": 12,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F24.webp?alt=media&token=4febcda7-40b7-4ece-b677-d0a5deda8303",
+      "category": "male",
+      "created_at": "24/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 25,
+      "name": "Áo thun trắng",
+      "price": 200000,
+      "description": "Áo thun trắng đơn giản và tiện lợi.",
+      "quantity": 9,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F25.webp?alt=media&token=ddaf6bbd-d5a6-45a3-808e-7cababbca47f",
+      "category": "male",
+      "created_at": "25/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 26,
+      "name": "Áo thun trắng họa tiết",
+      "price": 210000,
+      "description": "Áo thun trắng với họa tiết, trẻ trung.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F26.webp?alt=media&token=bf83f655-59a5-4a44-9230-a7077ef5edba",
+      "category": "male",
+      "created_at": "26/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 27,
+      "name": "Áo sơ mi xanh nhạt",
+      "price": 280000,
+      "description": "Áo sơ mi xanh nhạt, phong cách công sở.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F27.webp?alt=media&token=3d712017-e89e-4c5a-827a-1c8666a69ad6",
+      "category": "male",
+      "created_at": "27/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 28,
+      "name": "Áo thun đỏ",
+      "price": 220000,
+      "description": "Áo thun đỏ, nổi bật và năng động.",
+      "quantity": 9,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F28.webp?alt=media&token=d652c56c-b1b1-4bbf-895e-64c88ca0fc64",
+      "category": "male",
+      "created_at": "28/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 29,
+      "name": "Áo sơ mi xanh đậm",
+      "price": 270000,
+      "description": "Áo sơ mi xanh đậm, phong cách công sở.",
+      "quantity": 11,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F29.webp?alt=media&token=21be2621-3044-4d9f-b275-f3b325dd1bba",
+      "category": "male",
+      "created_at": "29/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 30,
+      "name": "Áo sơ mi xanh lá",
+      "price": 280000,
+      "description": "Áo sơ mi xanh lá, thiết kế thanh lịch.",
+      "quantity": 10,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F30.webp?alt=media&token=478910d8-2efe-45d5-b1da-6ff5f825c58c",
+      "category": "male",
+      "created_at": "30/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 31,
+      "name": "Áo thun vàng in chữ",
+      "price": 230000,
+      "description": "Áo thun vàng với chữ in phía trước.",
+      "quantity": 8,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Fmale%2F31.webp?alt=media&token=77acb6df-3c74-4659-8c41-5b8f0d876246",
+      "category": "male",
+      "created_at": "31/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 32,
+      "name": "Áo Tank Top Đen",
+      "price": 200000,
+      "description": "Áo tank top màu đen, kiểu dáng đơn giản, thoải mái.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F1.jpg?alt=media&token=348716cb-1509-4355-84f6-0190d656e3f6",
+      "category": "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 33,
+      "name": "Áo T-Shirt Trắng In Chữ",
+      "price": 250000,
+      "description": "Áo thun trắng in chữ, chất liệu mềm mại, thoáng mát.",
+      "quantity": 150,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F2.webp?alt=media&token=4e1fbf91-eda0-4081-9235-c43bb36c7309",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 34,
+      "name": "Áo T-Shirt Trắng In Họa Tiết",
+      "price": 270000,
+      "description": "Áo thun trắng in họa tiết, phong cách trẻ trung, năng động.",
+      "quantity": 120,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F3.jpg?alt=media&token=c08999a8-73fa-4997-a450-6040113348a9",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 35,
+      "name": "Chân Váy Xanh",
+      "price": 300000,
+      "description": "Chân váy màu xanh, kiểu dáng hiện đại, thoải mái.",
+      "quantity": 80,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F4.webp?alt=media&token=dc0a2c94-468a-4510-ab4e-a69766a25b2c",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 36,
+      "name": "Áo Sơ Mi Hồng",
+      "price": 320000,
+      "description": "Áo sơ mi màu hồng, kiểu dáng thanh lịch, thích hợp cho mọi hoàn cảnh.",
+      "quantity": 70,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F5.jpg?alt=media&token=af55a7d0-a8b2-42e7-988e-7418ac1622e4",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 37,
+      "name": "Áo Phông Đen In Chữ",
+      "price": 250000,
+      "description": "Áo phông màu đen in chữ, chất liệu thoải mái, phong cách trẻ trung.",
+      "quantity": 90,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F6.webp?alt=media&token=ef2d8f70-6db4-4fa2-82fe-664f808f50dd",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 38,
+      "name": "Áo T-Shirt Xanh In Chữ",
+      "price": 280000,
+      "description": "Áo thun màu xanh in chữ, phong cách năng động, chất liệu mềm mại.",
+      "quantity": 85,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F7.jpg?alt=media&token=6f5b7905-deee-4cce-8610-b8a58b1837ba",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 39,
+      "name": "Áo Sơ Mi Be",
+      "price": 350000,
+      "description": "Áo sơ mi màu be, kiểu dáng thanh lịch, thích hợp cho công sở.",
+      "quantity": 65,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F8.webp?alt=media&token=154c2885-ba5c-4526-89e2-ced079233f3e",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 40,
+      "name": "Áo Tank Top Trắng",
+      "price": 220000,
+      "description": "Áo tank top màu trắng, kiểu dáng đơn giản, thoải mái.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F9.webp?alt=media&token=9808a11b-2c0c-4d93-87ca-8c70c6e7ae92",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 41,
+      "name": "Áo Sơ Mi Xanh Nhạt",
+      "price": 320000,
+      "description": "Áo sơ mi màu xanh nhạt, kiểu dáng thoải mái, trẻ trung.",
+      "quantity": 75,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F10.jpg?alt=media&token=f86d6b15-f7f2-4e9f-aef3-a376732d7275",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 42,
+      "name": "Áo T-Shirt Trắng Đơn Giản",
+      "price": 240000,
+      "description": "Áo thun màu trắng, kiểu dáng đơn giản, chất liệu thoáng mát.",
+      "quantity": 110,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F11.webp?alt=media&token=4b148145-4443-461f-ba62-8e4d35fee761",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 43,
+      "name": "Chân Váy Vàng",
+      "price": 300000,
+      "description": "Chân váy màu vàng, kiểu dáng trẻ trung, phù hợp cho mọi hoàn cảnh.",
+      "quantity": 80,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F12.webp?alt=media&token=9ecabda2-0f99-4993-8dc6-869a93d61202",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 44,
+      "name": "Áo Phông Vàng",
+      "price": 270000,
+      "description": "Áo phông màu vàng, kiểu dáng thoải mái, chất liệu mềm mại.",
+      "quantity": 90,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F13.webp?alt=media&token=f8832118-c2d4-421f-88fa-8389d34d8da8",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 45,
+      "name": "Áo T-Shirt Xanh",
+      "price": 250000,
+      "description": "Áo thun màu xanh, phong cách đơn giản, chất liệu thoáng mát.",
+      "quantity": 110,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F14.webp?alt=media&token=804c5310-ed1d-4809-bd79-64b7daf7edbd",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 46,
+      "name": "Áo Sơ Mi Sọc Trắng Hồng",
+      "price": 320000,
+      "description": "Áo sơ mi sọc trắng hồng, kiểu dáng thanh lịch, thoải mái.",
+      "quantity": 75,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F15.webp?alt=media&token=7567b3aa-287f-46fd-b5c2-78288c97789f",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 47,
+      "name": "Áo Phông Đen",
+      "price": 240000,
+      "description": "Áo phông màu đen, kiểu dáng đơn giản, chất liệu thoải mái.",
+      "quantity": 90,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F16.webp?alt=media&token=38ab484f-cb11-48aa-85e0-904ef9472073",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 48,
+      "name": "Áo Sơ Mi Sọc Tím Trắng",
+      "price": 320000,
+      "description": "Áo sơ mi sọc tím trắng, phong cách trẻ trung, thoải mái.",
+      "quantity": 80,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F17.webp?alt=media&token=ad7504f9-b6d9-4cfb-859e-5f69627ee4ab",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 49,
+      "name": "Áo Thun Trắng In Hình",
+      "price": 270000,
+      "description": "Áo thun màu trắng in hình, kiểu dáng năng động, chất liệu mềm mại.",
+      "quantity": 95,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F18.webp?alt=media&token=c136ca94-b65a-4ac7-ab01-d68ce0218ac2",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 50,
+      "name": "Áo Phông Trắng In Hình",
+      "price": 250000,
+      "description": "Áo phông màu trắng in hình, phong cách trẻ trung, thoải mái.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F19.webp?alt=media&token=609d6e48-fb37-4948-9605-f8181af1a0a7",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 51,
+      "name": "Áo Phông Vàng In Chữ",
+      "price": 270000,
+      "description": "Áo phông màu vàng in chữ, chất liệu mềm mại, phong cách trẻ trung.",
+      "quantity": 85,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F20.webp?alt=media&token=f2c7cd78-9319-41d2-9629-ba9f961cf5f5",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 52,
+      "name": "Áo Thun Trắng In Chữ",
+      "price": 250000,
+      "description": "Áo thun màu trắng in chữ, phong cách năng động, chất liệu mềm mại.",
+      "quantity": 90,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F21.webp?alt=media&token=a33aef61-27f5-4114-b23b-0a27007a0c1e",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 53,
+      "name": "Áo Phông Đen",
+      "price": 240000,
+      "description": "Áo phông màu đen, kiểu dáng đơn giản, chất liệu thoải mái.",
+      "quantity": 110,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F22.webp?alt=media&token=4c5e7d68-74e1-4841-88b2-7fbc6eb6008b",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 54,
+      "name": "Áo Thun Hồng",
+      "price": 270000,
+      "description": "Áo thun màu hồng, phong cách đơn giản, chất liệu thoáng mát.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F23.webp?alt=media&token=21c8ab90-8b85-4bc9-bcb1-d1fc2ef2930f",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 55,
+      "name": "Áo Thun Xanh Nhạt",
+      "price": 250000,
+      "description": "Áo thun màu xanh nhạt, phong cách trẻ trung, chất liệu mềm mại.",
+      "quantity": 90,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F24.webp?alt=media&token=aad347e1-eaa7-4177-b194-22c3d0cc0632",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 56,
+      "name": "Bộ Đồ Hồng",
+      "price": 350000,
+      "description": "Bộ đồ màu hồng, kiểu dáng thoải mái, chất liệu thoáng mát.",
+      "quantity": 70,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F25.webp?alt=media&token=ea58010c-6b4f-4206-8fde-3c439de78159",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 57,
+      "name": "Áo Thun Trắng In Hình",
+      "price": 250000,
+      "description": "Áo thun màu trắng in hình, phong cách trẻ trung, chất liệu mềm mại.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F26.webp?alt=media&token=11f36f99-abfd-4d72-bab2-db5046a01c72",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 58,
+      "name": "Áo Thun Trắng In Hình",
+      "price": 250000,
+      "description": "Áo thun màu trắng in hình, phong cách trẻ trung, chất liệu mềm mại.",
+      "quantity": 100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F27.webp?alt=media&token=c3472ec1-ec35-4fab-82ae-72f825a13e41",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 59,
+      "name": "Áo Thun Hồng Nhạt",
+      "price": 240000,
+      "description": "Áo thun màu hồng nhạt, kiểu dáng đơn giản, chất liệu thoải mái.",
+      "quantity": 110,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F28.webp?alt=media&token=2618519e-1f8b-46fe-b973-8ee4735990b4",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 60,
+      "name": "Áo Thun Trắng In Hình",
+      "price": 270000,
+      "description": "Áo thun màu trắng in hình, phong cách năng động, chất liệu mềm mại.",
+      "quantity": 95,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F29.webp?alt=media&token=b4b0d5f3-4349-4e20-ab69-2b3ba2f8f61e",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 61,
+      "name": "Áo Thun Vàng Nhạt",
+      "price": 260000,
+      "description": "Áo thun màu vàng nhạt, kiểu dáng trẻ trung, chất liệu thoáng mát.",
+      "quantity": 85,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F30.webp?alt=media&token=3bd65baf-1c54-4007-a5e1-67ebe949ec7e",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
+    },
+    {
+      "id": 62,
+      "name": "Áo Hoodie Cặp",
+      "price": 500000,
+      "description": "Áo hoodie cặp, chất liệu ấm áp, phù hợp cho mùa đông.",
+      "quantity": 60,
+      "image": "https://firebasestorage.googleapis.com/v0/b/e-commerce-60acc.appspot.com/o/img%2Ffemale%2F31.webp?alt=media&token=bd76f5bc-e47e-4a62-aa75-d96acabac943",
+      "category":  "female",
+      "created_at": "11/07/2024",
+      "updated_at": "11/07/2024"
     }
   ],
- "users": [
+  "users": [
     {
       "id": 1,
       "username": "john_doe",
@@ -146,7 +773,7 @@
       "username": "sarah_davis",
       "email": "sarah.davis@example.com",
       "fullname": "Sarah Davis",
-      "status": false,
+      "status": "true",
       "password": "hashed_password",
       "role": false,
       "avatar": "https://example.com/avatar7.jpg",
@@ -196,6 +823,44 @@
       "address": "963 Birch Ave, City, Country",
       "created_at": "10/10/2023",
       "updated_at": "14/07/2024"
+    },
+    {
+      "username": "dungpham197qn",
+      "password": "732754as",
+      "email": "dungpham197qn@gmail.com",
+      "phone": "0926984675",
+      "address": "tran phu",
+      "fullname": "Dũng Phạm",
+      "id": 3935,
+      "status": true,
+      "role": false,
+      "avatar": "",
+      "created_at": "10/7/2024",
+      "updated_at": "10/7/2024"
+    },
+    {
+      "username": "dungpham197qn",
+      "password": "732754as",
+      "email": "dungpham197qn@gmail.com",
+      "phone": "0926984675",
+      "address": "tran phu",
+      "fullname": "Dũng Phạm",
+      "id": 9034,
+      "status": true,
+      "role": false,
+      "avatar": "",
+      "created_at": "10/7/2024",
+      "updated_at": "10/7/2024"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "male"
+    },
+    {
+      "id": 2,
+      "name": "female"
     }
   ]
 }

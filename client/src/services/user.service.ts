@@ -5,7 +5,10 @@ import { User } from '../interfaces/types'; // Ensure you have a User interface 
 const API_URL = 'http://localhost:3000/users'; // Update your API URL if needed
 
 export const UserService = {
-
+  async getAllUsers(): Promise<User> {
+    const response = await axios.get<User>(API_URL);
+    return response.data;
+  },
 
   async registerUser(newUser: User): Promise<User> {
     const response = await axios.post<User>(API_URL, newUser);

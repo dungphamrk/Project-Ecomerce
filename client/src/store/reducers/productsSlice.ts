@@ -38,6 +38,13 @@ export const fetchPaginatedProducts: any = createAsyncThunk(
     };
   }
 );
+export const getAllProduct: any = createAsyncThunk(
+  "products/getAll",
+  async () => {
+    const data = await ProductService.getAllProduct();
+    return data;
+  }
+);
 
 // Async thunk for adding a product
 export const addProduct: any = createAsyncThunk(
@@ -80,6 +87,9 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    .addCase(getAllProduct.fulfilled, (state,action) => {
+      state.products=action.payload;
+    })
       .addCase(fetchPaginatedProducts.pending, (state) => {
         state.loading = true;
         state.error = null;

@@ -4,7 +4,9 @@ import {
   HomeOutlined,
   MenuOutlined,
   UserOutlined,
-  ShoppingCartOutlined
+  ShoppingCartOutlined,
+  DashboardOutlined,
+  AppstoreOutlined
 } from "@ant-design/icons";
 import React from "react";
 import {
@@ -14,6 +16,7 @@ import {
   menuClasses,
 } from "react-pro-sidebar";
 import { Outlet, useNavigate } from "react-router-dom";
+import Navigation from "./Navigation";
 
 export default function SideBar() {
   const [toggled, setToggled] = React.useState(false);
@@ -68,6 +71,8 @@ export default function SideBar() {
         >
           <MenuItem onClick={() => navigate('/admin/home')} icon={<HomeOutlined />}>Home</MenuItem>
           <MenuItem onClick={() => navigate('/admin/user')} icon={<UserOutlined />}>User</MenuItem>
+          <MenuItem onClick={() => navigate('/admin')} icon={<DashboardOutlined />}>Dashboard</MenuItem>
+          <MenuItem onClick={() => navigate('/admin/category')} icon={<AppstoreOutlined/>}>Danh mục</MenuItem>
           <MenuItem onClick={() => navigate('/admin')} icon={<AccountBookOutlined />}>Hóa đơn</MenuItem>
           <MenuItem onClick={() => navigate('/admin/products')} icon={<ShoppingCartOutlined/>}>Product</MenuItem>
         </Menu>
@@ -85,6 +90,7 @@ export default function SideBar() {
           )}
           <div className="flex items-center space-x-4">
             <BellOutlined className="text-red-700" />
+            <Navigation/>
           </div>
         </nav>
         <div className="flex-1 p-4 bg-gray-100 overflow-auto">
