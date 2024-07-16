@@ -17,6 +17,11 @@ export default function ProductList() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const ITEMS_PER_PAGE = 8;
+  
+  /*
+    em thử thêm cách phân trang trong db nhé
+    query limit vs page
+  */
 
   useEffect(() => {
     dispatch(getAllProduct());
